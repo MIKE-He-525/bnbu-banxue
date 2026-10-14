@@ -233,7 +233,7 @@ body:has(.v2-app) .v2-button:disabled {
 }
 
 .v2-app :is(.v2-filter-pills button, .v2-tabs button, .v2-activity-filter-options button) {
-  min-height: 36px;
+  min-height: 44px;
   padding: 0 14px;
   border: 0;
   border-radius: var(--radius-full);
@@ -701,8 +701,8 @@ body .v2-a-community-compose .v2-community-compose-circle {
   }
 
   .v2-app .v2-menu-trigger {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border: 0;
     background: transparent;
   }
