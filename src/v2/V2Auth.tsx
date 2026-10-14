@@ -129,7 +129,7 @@ export function V2Auth({ mode }: { mode: AuthMode }) {
         <Link className="v2-auth-brand" to="/v2">
           <img src={brandIcon} alt="" />
           <span>
-            伴学 <small>BNBU CAMPUS</small>
+            bnbu伴学
           </span>
         </Link>
         <Link className="v2-auth-back" to="/v2">
@@ -138,8 +138,8 @@ export function V2Auth({ mode }: { mode: AuthMode }) {
         </Link>
       </header>
       <main className="v2-auth-layout">
-        <section className="v2-auth-intro" aria-label="伴学校园生活">
-          <span className="v2-auth-eyebrow">BNBU / CAMPUS</span>
+        <section className="v2-auth-intro" aria-label="bnbu伴学校园生活">
+          <span className="v2-auth-eyebrow">bnbu伴学</span>
           <div>
             <span className="v2-auth-index">01 — 03</span>
             <h1>
@@ -151,7 +151,7 @@ export function V2Auth({ mode }: { mode: AuthMode }) {
           </div>
           <div className="v2-auth-intro-footer">
             <span>为每一次参与，留好位置。</span>
-            <span>伴学 · 校园生活助手</span>
+            <span>bnbu伴学 · 校园生活助手</span>
           </div>
         </section>
         <section className="v2-auth-card" aria-labelledby="auth-title">
@@ -160,7 +160,7 @@ export function V2Auth({ mode }: { mode: AuthMode }) {
               {mode === "login" ? "WELCOME BACK" : "CREATE ACCOUNT"}
             </span>
             <h2 id="auth-title">
-              {mode === "login" ? "登录伴学" : "注册伴学"}
+              {mode === "login" ? "登录bnbu伴学" : "注册bnbu伴学"}
             </h2>
             <p>
               {mode === "login"
@@ -338,7 +338,7 @@ export function V2Auth({ mode }: { mode: AuthMode }) {
         </section>
       </main>
       <footer className="v2-auth-footer">
-        <span>BNBU CAMPUS · 伴学</span>
+        <span>bnbu伴学</span>
         <span>清晰连接校园生活</span>
       </footer>
     </div>

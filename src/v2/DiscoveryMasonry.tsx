@@ -7,7 +7,7 @@ export function DiscoveryMasonry<T extends { id: string }>({ items, renderItem, 
   const sentinel = useRef<HTMLDivElement>(null)
   const [width, setWidth] = useState(360)
   const [limit, setLimit] = useState(6)
-  const columns = Math.max(2, Math.min(4, Math.floor(width / 220)))
+  const columns = width < 560 ? 1 : Math.max(2, Math.min(4, Math.floor(width / 220)))
   const hasMore = limit < items.length
   useEffect(() => {
     const element = container.current

@@ -97,7 +97,7 @@ export function CampusMap({ location }: { location: string }) {
   return <div className="campus-map-anchor" ref={anchor}>
     {expanded && createPortal(<button className="campus-map-backdrop" aria-label="收起三维地图" onClick={() => closeExpanded.current()}/>, document.body)}
     <div className="campus-map-panel" ref={panel} role={expanded ? 'dialog' : 'region'} aria-modal={expanded || undefined} aria-label="互动校园地图">
-      <header className="campus-map-header"><div><span>BNBU CAMPUS</span><strong>互动地图导览 <small>3D</small></strong></div><button ref={toggle} type="button" aria-label={expanded ? '收起三维地图' : '展开三维地图'} aria-expanded={expanded} onClick={() => expanded ? closeExpanded.current() : expand()}>{expanded ? <X size={17}/> : <Expand size={17}/>}<span>{expanded ? '收起' : '展开'}</span></button></header>
+      <header className="campus-map-header"><div><span>bnbu伴学</span><strong>互动地图导览 <small>3D</small></strong></div><button ref={toggle} type="button" aria-label={expanded ? '收起三维地图' : '展开三维地图'} aria-expanded={expanded} onClick={() => expanded ? closeExpanded.current() : expand()}>{expanded ? <X size={17}/> : <Expand size={17}/>}<span>{expanded ? '收起' : '展开'}</span></button></header>
       <div className="campus-map-viewport">
         <div className="campus-map-canvas" ref={canvas}/>
         {status !== 'ready' && <div className="campus-map-state" role="status">{status === 'loading' ? <><span className="campus-map-spinner"/>正在加载校园模型…</> : <><strong>三维地图暂时无法显示</strong><span>请重试，或使用支持 WebGL 的浏览器。</span><button onClick={() => { setStatus('loading'); setAttempt((value) => value + 1) }}>重新加载</button></>}</div>}
