@@ -5,10 +5,10 @@
 | 文件 | 画面 |
 | --- | --- |
 | `01-login-qingyou-soft-campus.png` | 登录 |
-| `02-home-qingyou-soft-campus.png` | 首页 |
-| `03-activities-qingyou-soft-campus.png` | 活动列表 |
-| `04-activity-detail-qingyou-soft-campus.png` | 活动详情 |
-| `05-community-qingyou-soft-campus.png` | 校园社区 |
+| `02-home-qingyou-soft-campus.png` | 首页：下一项、今日待办、校园推荐 |
+| `03-activities-qingyou-soft-campus.png` | 活动：搜索与筛选在列表上方 |
+| `04-activity-detail-qingyou-soft-campus.png` | 活动详情：底部主操作是标记参与 |
+| `05-community-qingyou-soft-campus.png` | 社区 |
 | `06-profile-qingyou-soft-campus.png` | 我的 |
 | `07-settings-qingyou-soft-campus.png` | 设置 |
 | `08-partners-qingyou-soft-campus.png` | 找搭子 |

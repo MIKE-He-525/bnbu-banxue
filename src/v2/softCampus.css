@@ -368,10 +368,40 @@ body:has(.v2-app) select {
 .v2-app .v2-a-next-card {
   overflow: hidden;
   border-radius: var(--radius-lg);
-  background:
-    radial-gradient(120% 80% at 100% 0%, rgb(45 212 191 / 22%), transparent 46%),
-    linear-gradient(165deg, var(--color-primary-soft), var(--color-surface) 62%);
+  background: var(--color-surface);
   color: var(--color-text);
+  box-shadow: var(--sc-shadow-soft);
+}
+
+.v2-app .v2-home-stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.v2-app .v2-home-today,
+.v2-app .v2-home-recommend {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.v2-app .v2-home-quiet {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font: var(--font-body-applied);
+}
+
+.v2-app .v2-home-picks {
+  display: grid;
+}
+
+.v2-app .v2-home-picks a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 .v2-app .v2-a-next-card:before {
@@ -978,5 +1008,83 @@ body .v2-a-community-compose .v2-community-compose-circle {
   .v2-auth-intro p,
   .v2-auth-card-head p {
     font: var(--font-body-applied);
+  }
+
+  .v2-app .v2-activity-sticky {
+    top: calc(56px + env(safe-area-inset-top));
+  }
+
+  body:has(.v2-app) .v2-drawer-footer {
+    display: block;
+    flex: none;
+    padding: 10px var(--space-4) calc(10px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+
+  body:has(.v2-app) .v2-activity-actionbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+    align-items: center;
+  }
+
+  body:has(.v2-app) .v2-activity-actionbar .v2-button {
+    min-height: 44px;
+  }
+
+  body:has(.v2-app) .v2-activity-actionbar .v2-activity-main {
+    grid-column: 1 / -1;
+  }
+
+  body:has(.v2-app) .v2-activity-share-note {
+    grid-column: 1 / -1;
+    color: var(--color-text-secondary);
+    font: var(--font-caption-applied);
+  }
+
+  body:has(.v2-app) .v2-activity-inline-actions,
+  body:has(.v2-app) .v2-drawer .activity-detail-reactions .activity-save {
+    display: none;
+  }
+}
+
+.v2-app .v2-activity-sticky {
+  position: sticky;
+  top: 64px;
+  z-index: 4;
+  padding-top: var(--space-2);
+  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.v2-app .v2-filter-summary {
+  margin: 0 0 var(--space-3);
+}
+
+.v2-app .v2-filter-summary button {
+  min-height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-primary);
+  font: 600 12px/16px var(--font-sans);
+}
+
+.v2-app .v2-empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.v2-app .v2-empty-actions .v2-button,
+.v2-app .v2-filter-empty > .v2-button {
+  min-height: 44px;
+}
+
+@media (min-width: 721px) {
+  body:has(.v2-app) .v2-drawer-footer {
+    display: none;
   }
 }
