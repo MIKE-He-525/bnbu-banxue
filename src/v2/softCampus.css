@@ -512,6 +512,10 @@ body:has(.v2-app) select {
   font: var(--font-caption-applied);
 }
 
+.v2-app .discovery-title {
+  margin-bottom: var(--space-1);
+}
+
 .v2-app .activity-discovery-reactions button.is-liked,
 .v2-app .activity-detail-reactions button.is-liked,
 .v2-app .v2-pulse-heart.is-active {
@@ -741,10 +745,15 @@ body .v2-a-community-compose .v2-community-compose-circle {
 
 /* Phone viewport */
 @media (max-width: 720px) {
+  .v2-app {
+    --sc-topbar-height: calc(56px + env(safe-area-inset-top));
+  }
+
   .v2-app .v2-topbar {
-    min-height: calc(56px + env(safe-area-inset-top));
+    min-height: var(--sc-topbar-height);
     padding: env(safe-area-inset-top) var(--space-4) 0;
-    border-bottom-color: transparent;
+    border-bottom-color: var(--color-border);
+    background: var(--color-bg);
   }
 
   .v2-app .v2-menu-trigger {
@@ -754,11 +763,19 @@ body .v2-a-community-compose .v2-community-compose-circle {
     background: transparent;
   }
 
+  .v2-app .v2-top-left {
+    min-width: 0;
+  }
+
   .v2-app .v2-a-mobile-brand {
+    min-width: 0;
     gap: var(--space-2);
+    overflow: hidden;
     color: var(--color-text);
     font: 700 16px/22px var(--font-sans);
     letter-spacing: -0.03em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .v2-app .v2-a-mobile-brand img {
@@ -934,6 +951,10 @@ body .v2-a-community-compose .v2-community-compose-circle {
     backdrop-filter: blur(18px);
   }
 
+  .v2-app-student .v2-mobile-nav {
+    right: calc(44px + var(--space-2) + max(var(--space-3), env(safe-area-inset-right)));
+  }
+
   .v2-app .v2-mobile-nav a {
     flex: 1;
     min-width: 0;
@@ -957,8 +978,9 @@ body .v2-a-community-compose .v2-community-compose-circle {
 
   .v2-app .v2-ai-float,
   .v2-ai-float {
-    right: max(var(--space-4), env(safe-area-inset-right));
-    bottom: calc(78px + env(safe-area-inset-bottom));
+    right: max(var(--space-3), env(safe-area-inset-right));
+    bottom: calc(var(--space-3) + 10px + env(safe-area-inset-bottom));
+    z-index: 46;
     width: 44px;
     height: 44px;
   }
@@ -971,8 +993,8 @@ body .v2-a-community-compose .v2-community-compose-circle {
   .v2-a-community-compose,
   .v2-community-compose {
     left: auto !important;
-    right: max(var(--space-4), env(safe-area-inset-right));
-    bottom: calc(148px + env(safe-area-inset-bottom));
+    right: max(var(--space-3), env(safe-area-inset-right));
+    bottom: calc(64px + var(--space-3) + var(--space-3) + env(safe-area-inset-bottom));
   }
 
   body:has(.v2-app) .v2-modal {
@@ -1011,7 +1033,35 @@ body .v2-a-community-compose .v2-community-compose-circle {
   }
 
   .v2-app .v2-activity-sticky {
-    top: calc(56px + env(safe-area-inset-top));
+    top: var(--sc-topbar-height);
+    z-index: 30;
+    padding-bottom: var(--space-2);
+    background: var(--color-bg);
+  }
+
+  body:has(.v2-app) .v2-drawer > header {
+    position: relative;
+    z-index: 2;
+    align-items: flex-start;
+    gap: var(--space-3);
+    background: var(--color-surface);
+  }
+
+  body:has(.v2-app) .v2-drawer > header > div {
+    min-width: 0;
+    flex: 1;
+  }
+
+  body:has(.v2-app) .v2-drawer > header h2 {
+    margin: var(--space-1) 0 0;
+    overflow-wrap: anywhere;
+    font: var(--font-h2-applied);
+  }
+
+  body:has(.v2-app) .v2-drawer > header .v2-icon-button {
+    flex: none;
+    width: 44px;
+    height: 44px;
   }
 
   body:has(.v2-app) .v2-drawer-footer {
@@ -1049,12 +1099,25 @@ body .v2-a-community-compose .v2-community-compose-circle {
   }
 }
 
+.v2-app .v2-featured-copy h2,
+.v2-app .discovery-title,
+.v2-app .v2-activity-info h3,
+.v2-app .v2-room-card h3,
+.v2-app .v2-section-heading h2 {
+  overflow-wrap: anywhere;
+}
+
+.v2-app .v2-activity-info,
+.v2-app .discovery-card {
+  min-width: 0;
+}
+
 .v2-app .v2-activity-sticky {
   position: sticky;
   top: 64px;
   z-index: 4;
   padding-top: var(--space-2);
-  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+  background: color-mix(in srgb, var(--color-bg) 94%, transparent);
   backdrop-filter: blur(14px);
 }
 
@@ -1086,5 +1149,14 @@ body .v2-a-community-compose .v2-community-compose-circle {
 @media (min-width: 721px) {
   body:has(.v2-app) .v2-drawer-footer {
     display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .v2-app .v2-activity-sticky {
+    top: var(--sc-topbar-height, calc(56px + env(safe-area-inset-top)));
+    z-index: 30;
+    padding-bottom: var(--space-2);
+    background: var(--color-bg);
   }
 }

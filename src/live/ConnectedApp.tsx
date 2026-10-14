@@ -369,7 +369,7 @@ export function ConnectedApp() {
   if (!data)
     return (
       <main className="live-loading">
-        <h1>连接伴学</h1>
+        <h1>连接bnbu伴学</h1>
         <p role={error ? "alert" : "status"}>
           {error || "正在获取账号与校园数据…"}
         </p>
@@ -487,7 +487,7 @@ export function ConnectedApp() {
         ["notifications", "消息通知", Bell],
         ["profile", "个人资料", CalendarDays],
       ] as [string, string, LucideIcon][]);
-  const moduleTitle = nav.find((n) => n[0] === module)?.[1] ?? "伴学";
+  const moduleTitle = nav.find((n) => n[0] === module)?.[1] ?? "bnbu伴学";
   const coffeeSlots = all("coffeeSlot"),
     coffeeBookings = all("coffeeBooking");
   const slotLabel = (id: unknown) => {
@@ -583,8 +583,7 @@ export function ConnectedApp() {
         <Link to="/workspace" className="v2-brand">
           <img src={brandIcon} alt="" />
           <span>
-            <strong>伴学</strong>
-            <small>BNBU CAMPUS</small>
+            <strong>bnbu伴学</strong>
           </span>
         </Link>
         <div className="v2-nav-label">校园与我</div>
@@ -610,7 +609,7 @@ export function ConnectedApp() {
       <div className="v2-workspace">
         <header className="v2-topbar">
           <div>
-            <span className="v2-breadcrumb">BNBU / {moduleTitle}</span>
+            <span className="v2-breadcrumb">bnbu伴学 / {moduleTitle}</span>
             <strong>{me.name}</strong>
           </div>
           <div className="live-actions">
@@ -635,7 +634,7 @@ export function ConnectedApp() {
         </header>
         <main className="v2-main live-main">
           <PageHeading
-            eyebrow="BNBU CAMPUS"
+            eyebrow="bnbu伴学"
             title={moduleTitle}
             description={`${me.roles.map(label).join(" · ") || "尚未授予校园身份"}${me.status !== "active" ? ` · ${label(me.status)}` : ""}`}
           />

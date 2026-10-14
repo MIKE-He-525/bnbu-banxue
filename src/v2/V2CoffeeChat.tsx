@@ -94,7 +94,7 @@ export function V2CoffeeChat() {
       })}</div> : <Empty icon={Coffee} title="暂时没有可查看的时段" description="稍后再来看看。"/>}
       {!isBooked && <label className="v2-form">想交流的问题<textarea maxLength={500} value={topic} onChange={event => setTopic(event.target.value)} placeholder="请填写交流主题或问题"/></label>}<div className="v2-coffee-booking-panel"><span><MapPin size={16}/>{slot?.location ?? teacher.location}</span><small>{slot ? `${slotDate(slot.startAt)} · ${slot.timeLabel}` : '请先选择一个时段'}</small><button type="button" className={`v2-button ${isBooked ? 'v2-button-secondary v2-coffee-cancel' : 'v2-button-primary'}`} disabled={live.busy || !slot || (!isBooked && (!teacher.enabled || slot.closed || Date.parse(slot.startAt) <= Date.now() || occupied(state, slot.id) >= slot.capacity))} onClick={updateBooking}>{isBooked ? '取消预约' : '确认预约'} <ArrowRight size={15}/></button></div>
       {(live.error || feedback) && <p className="v2-coffee-feedback" role="status">{live.error || feedback}</p>}
-      <p className="v2-form-note">预约保存到伴学后台，实际到场情况不由预约状态推定。</p>
+      <p className="v2-form-note">预约保存到bnbu伴学后台，实际到场情况不由预约状态推定。</p>
     </div>
   }
 

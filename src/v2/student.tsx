@@ -205,7 +205,7 @@ export function V2Activities() {
       <SectionHeading title="所有活动" detail={`${filtered.length} 个结果`} />
       {activeFilters.length > 0 && <div className="v2-active-filters" aria-label="已应用的筛选条件">{activeFilters.map((item) => <button type="button" key={item.label} aria-label={`清除${item.label}`} onClick={item.clear}>{item.label}<X size={13}/></button>)}<button type="button" className="v2-active-filters-reset" onClick={resetFilters}>清除全部</button></div>}
       {activeFilters.length > 0 && <p className="v2-filter-summary"><button type="button" onClick={resetFilters}>已筛 {activeFilters.length} · 清除</button></p>}
-      <p className="activity-discovery-note">点赞与收藏保存到伴学后台 · 点赞标记反映本人状态</p>
+      <p className="activity-discovery-note">点赞与收藏保存到bnbu伴学后台 · 点赞标记反映本人状态</p>
       {filtered.length ? <ActivityDiscovery live={live} key={JSON.stringify([query, category, period, hostFilter, statusFilter, sort])} items={filtered} basePath={activityBase}/> : <div className="v2-filter-empty"><Empty icon={Search} title="没有符合条件的活动。"/><div className="v2-empty-actions"><button type="button" className="v2-button v2-button-secondary" onClick={resetFilters}>清除筛选</button><button type="button" className="v2-button v2-button-primary" onClick={() => { resetFilters(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>去发现</button></div></div>}</section>
     {active && <Drawer title={active.title} eyebrow={`${active.category} · ${active.host}`} onClose={() => navigate(activityBase)} wide footer={activityActions}>
       <div className="v2-detail-art" role="img" aria-label={active.isDefaultCover ? '校园通用照片，默认封面' : `${active.title}封面`} style={active.image ? { backgroundImage: `url(${active.image})` } : undefined}/>

@@ -33,7 +33,7 @@ function ConversationPane({ conversation, draft, onDraft, onSend, onBack, opened
     <header className="inbox-chat-heading">
       <button type="button" className="inbox-back" aria-label="返回会话列表" onClick={onBack}><ArrowLeft size={21}/></button>
       <span className="inbox-avatar"><UsersRound size={21}/></span>
-      <div><h2>{conversation.title}</h2><p>队伍会话 · 已连接伴学后台</p></div>
+      <div><h2>{conversation.title}</h2><p>队伍会话 · 已连接bnbu伴学后台</p></div>
     </header>
     <div className="inbox-message-history" ref={messages} role="log" aria-label={`${conversation.title}的消息`} aria-live="polite" onScroll={event => {
       const target = event.currentTarget

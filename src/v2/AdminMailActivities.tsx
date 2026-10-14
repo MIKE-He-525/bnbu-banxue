@@ -58,7 +58,7 @@ export function AdminMailActivities() {
   if (!live.data) return <p role={live.error ? 'alert' : 'status'}>{live.error || '正在读取邮件处理记录…'}</p>
   return <div className="v2-page v2-mail-page">
     <PageHeading eyebrow="SCHOOL MAIL" title="邮件转活动" description="从学校邮件整理活动信息，自动发布，事后修正。"/>
-    <div className="v2-info-box">{!canOperate && <>当前账号没有运营职责，不能导入或修改邮件。 </>}当前使用规则提取邮件内容，处理记录保存到伴学后台。信息完整但没有海报时使用默认封面；可选择邮件附件图片。</div>
+    <div className="v2-info-box">{!canOperate && <>当前账号没有运营职责，不能导入或修改邮件。 </>}当前使用规则提取邮件内容，处理记录保存到bnbu伴学后台。信息完整但没有海报时使用默认封面；可选择邮件附件图片。</div>
     {!current && notice}
     <section className="v2-panel v2-list-panel"><SectionHeading title="导入邮件内容" action={<button className="v2-button v2-button-secondary" disabled={!canOperate || live.busy} onClick={example}>填入示例邮件</button>}/>
       <form className="v2-form" onSubmit={importMail}>
