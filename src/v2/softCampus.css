@@ -193,7 +193,14 @@ body:has(.v2-app) .v2-button:disabled {
   white-space: nowrap;
 }
 
-.v2-app :is(.v2-status-chip, .v2-room-type, .activity-discovery-category, .discovery-badge, .v2-a-schedule-list em) {
+.v2-app :is(.v2-status-chip, .v2-room-type, .activity-discovery-category, .v2-a-schedule-list em) {
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--color-accent) 18%, white);
+  color: #0f766e;
+  font-weight: 700;
+}
+
+.v2-app .discovery-badge {
   border-radius: var(--radius-full);
   background: var(--color-accent);
   color: var(--sc-accent-ink);
@@ -232,6 +239,11 @@ body:has(.v2-app) .v2-button:disabled {
   font: var(--font-h2-applied);
 }
 
+.v2-app .v2-filter-pills {
+  align-items: center;
+  min-height: 44px;
+}
+
 .v2-app :is(.v2-filter-pills button, .v2-tabs button, .v2-activity-filter-options button) {
   min-height: 44px;
   padding: 0 14px;
@@ -258,6 +270,11 @@ body:has(.v2-app) :is(.v2-modal, .v2-drawer) :is(input:not([type="checkbox"]):no
   color: var(--color-text);
   font: var(--font-body-applied);
   box-shadow: none;
+}
+
+.v2-app :is(.v2-animated-search, .v2-animated-search-trigger, .v2-animated-search-field, .v2-activity-filter-toggle) {
+  height: 44px;
+  min-height: 44px;
 }
 
 .v2-app .v2-form :is(input:not([type="checkbox"]):not([type="file"]), select),
@@ -422,7 +439,7 @@ body:has(.v2-app) select {
 .v2-app .v2-service-card,
 .v2-app .v2-social-card,
 .v2-app .v2-activity-card {
-  border: 1px solid var(--color-border);
+  border-color: transparent;
   border-radius: var(--radius-md);
   background: var(--color-surface);
   box-shadow: var(--sc-shadow-soft);
@@ -548,8 +565,8 @@ body:has(.v2-app) select {
   margin-top: var(--space-2);
   padding: 4px 10px;
   border-radius: var(--radius-full);
-  background: var(--color-accent);
-  color: var(--sc-accent-ink);
+  background: color-mix(in srgb, var(--color-accent) 18%, white);
+  color: #0f766e;
   font: 700 12px/16px var(--font-sans);
 }
 
@@ -736,7 +753,7 @@ body .v2-a-community-compose .v2-community-compose-circle {
 
   .v2-app .v2-a-home-primary,
   .v2-app .v2-a-home-secondary {
-    gap: var(--space-3);
+    gap: var(--space-4);
   }
 
   .v2-app .v2-a-next-card {
@@ -893,7 +910,7 @@ body .v2-a-community-compose .v2-community-compose-circle {
     gap: 2px;
     border-radius: var(--radius-md);
     color: var(--color-text-secondary);
-    font: 600 11px/14px var(--font-sans);
+    font: 600 12px/16px var(--font-sans);
   }
 
   .v2-app .v2-mobile-nav a span {
