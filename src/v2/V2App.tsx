@@ -29,6 +29,7 @@ import './aRedesign.css'
 import './aControls.css'
 import './timetableShortcut.css'
 import './studentTheme.css'
+import './softCampus.css'
 
 const studentNav = [
   { path: '/v2', label: '首页', icon: LayoutDashboard, end: true },

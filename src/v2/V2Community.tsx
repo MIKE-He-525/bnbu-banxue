@@ -33,7 +33,7 @@ function DiscoveryFeed({ posts, liked, saved, onOpen, onLike, onSave }: { posts:
   useEffect(() => {
     const element = container.current
     if (!element) return
-    const observer = new ResizeObserver(([entry]) => setColumns(Math.max(2, Math.min(4, Math.floor(entry.contentRect.width / 220)))))
+    const observer = new ResizeObserver(([entry]) => setColumns(entry.contentRect.width < 560 ? 1 : Math.max(2, Math.min(4, Math.floor(entry.contentRect.width / 220)))))
     observer.observe(element)
     return () => observer.disconnect()
   }, [])
